@@ -88,7 +88,7 @@ const createReactive = (obj: any, isShallow = false, isReadOnly = false) => {
     // 拦截 for...in 操作
     ownKeys(target: any) {
       // 通过 ITERATOR_KEY 作为副作用函数的关联key
-      track(target, Array.isArray(target) ? 'length' :ITERATOR_KEY);
+      track(target, Array.isArray(target) ? 'length' : ITERATOR_KEY);
       return Reflect.ownKeys(target);
     },
     // 拦截删除操作
